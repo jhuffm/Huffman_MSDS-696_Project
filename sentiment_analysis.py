@@ -13,7 +13,7 @@ text['tweet_text'] = text['tweet_text'].str.lower()
 # Remove punctuation
 text['tweet_text'] = text['tweet_text'].str.translate(str.maketrans('','', string.punctuation))
 
-# # Remove first character since every tweet shows 'b' as the first character
+# Remove first character since every tweet shows 'b' as the first character
 text['tweet_text'] = text['tweet_text'].str[1:]
 
 # Split tweets into individual words
@@ -51,4 +51,5 @@ for line in text['tokenized_tweets']:
         text['mean_score'].loc[i]=0
     i+=1
 
+text.to_csv("C:/Users/huffm/raw_sentiment_score.csv")
 print(text.head(10))
