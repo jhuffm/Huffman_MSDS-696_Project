@@ -2,25 +2,25 @@ import pandas as pd
 import string
 from nltk.tokenize import word_tokenize
 import numpy as np
+import requests
 
 # Read in Tweets
-text = pd.read_csv("C:/Users/huffm/combined_twitter_data.csv", index_col = 0)
+text = pd.read_csv("combined_twitter_data.csv", index_col = 0)
 
 ## Process text prior to sentiment analysis
+
 # Convert to lower case
 text['tweet_text'] = text['tweet_text'].str.lower()
-
 # Remove punctuation
 text['tweet_text'] = text['tweet_text'].str.translate(str.maketrans('','', string.punctuation))
-
 # Remove first character since every tweet shows 'b' as the first character
 text['tweet_text'] = text['tweet_text'].str[1:]
-
 # Split tweets into individual words
 text['tokenized_tweets'] = text.apply(lambda row: word_tokenize(row['tweet_text']), axis=1)
 
 ## Sentiment Analysis
-scores_file = "C:/Users/huffm/Desktop/MSDS 696/AFINN-165.txt"
+# Need to pull AFINN-165 list from Github repository and save to local directory
+scores_file = 'AFINN-165.txt'
 
 # Loop through words in scores_file and store in dictionary
 def readSentimentData(sentimentDataFile):
@@ -34,7 +34,7 @@ def readSentimentData(sentimentDataFile):
 
 scores = readSentimentData(scores_file)
 
-text['mean_score'] = ""
+text['mean_score'] = "" #Create empty column called mean_score to hold the average score for each tweet
 i=0
 # Loop through words in individual tweets to see if they contain words from the scores_file, produce the mean score for each tweet
 for line in text['tokenized_tweets']:
@@ -51,5 +51,4 @@ for line in text['tokenized_tweets']:
         text['mean_score'].loc[i]=0
     i+=1
 
-text.to_csv("C:/Users/huffm/raw_sentiment_score.csv")
-print(text.head(10))
+text.to_csv("raw_sentiment_score.csv")
