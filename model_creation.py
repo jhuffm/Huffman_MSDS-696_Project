@@ -30,7 +30,7 @@ plt.show()
 print(data.isnull().sum())
 print(data.shape)
 
-# Test for Causality using Granger causality test  ### Probably need to adjust
+# Test for Causality using Granger causality test
 maxlag=12
 test = 'ssr_chi2test'
 def grangers_causation_matrix(data, variables, test='ssr_chi2test', verbose=False):    
