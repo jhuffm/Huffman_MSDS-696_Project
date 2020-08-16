@@ -1,10 +1,10 @@
 # Huffman_MSDS-696_Project
 Repository for Regis University Capstone project
 
-The purpose of this project is to perform a sentiment analysis on tweets from Colorado counties related to the COVID-19 outbreak and CDC recommended best practices for containing the spread of COVID-19, such as hand-washing, social distancing, and wearing masks.  This information will be used to create a sentiment score for each county that will describe how positive or negative individuals are in the county as a whole toward a particular idea or policy. 
+This project was performed as a capstone requirement for the Regis University MSDS program.
 
-Once the sentiment analysis has been performed, the opinions of each county will be compared to the number of COVID-19 cases per capita of the county and used to create a prediction model with the intent of predicting the infection rate.
+The goal of this project was to perform a sentiment analysis on tweets from the Denver metro area related to the COVID-19 outbreak and CDC recommended best practices for containing the spread of COVID-19, such as practicing good hygiene, social distancing, and wearing masks. This information was used to create a sentiment score for the area that describes how positive or negative sentiments in the area were as a whole, toward a particular idea or policy each day.
 
-The data for this project will mainly be pulled from Twitter to perform the sentiment analysis and covid19.colorado.gov to get the infection information.
+Once the sentiment analysis was performed, the sentiment scores were compared to the number of COVID-19 cases per 100,000 individuals in the area and this was used to create a prediction model with the intent of predicting the infection rate.
 
-If an accurate prediction model can be created, then potential hotspots can be identified earlier by tracking shifts in opinions.  This could help health departments and county governments be proactive in distributing information and implanting policies in an effort to mitigate the potential spread.
+The reason for doing this project was in hopes that sentiment changes displayed on social media might be able provide a bit of advanced notice that infection rates are about to change; this information could then be used by governments and health departments to proactively prepare for the change and adjust policies and marketing accordingly
