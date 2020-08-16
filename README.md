@@ -1,7 +1,7 @@
 # Repository for Data Science Capstone Project
-## COVID-19 Sentiment Analysis
-## Regis University - MSDS 696
-## Jason Huffman
+### COVID-19 Sentiment Analysis
+### Regis University - MSDS 696
+### Jason Huffman
 
 
 This project was performed as a capstone requirement for the Regis University MSDS program.
